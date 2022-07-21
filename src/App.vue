@@ -4,7 +4,7 @@
       <sidebar-menu :menu="menu" @update:collapsed="onToggleCollapse" @item-click="onItemClick" />
     </div>
     <div class="toggleCollapsedFalse" :class="{ toggleCollapsedTrue:toggleCollapsed }">
-      <div class="toggleCollapsedSubFalse" :class="{ toggleCollapsedTrue: toggleCollapsedSubTrue }">
+      <div class="toggleCollapsedSubFalse" :class="{ toggleCollapsedSubTrue: toggleCollapsed }">
         <router-view></router-view>
       </div>
 
@@ -183,19 +183,19 @@ export default {
   .toggleCollapsedFalse{
     width:80%;
     height:auto;
-    margin-left:35%;
+    margin-left:29%;
   }
     .toggleCollapsedTrue {
-      width: 95%;
+      width: 100%;
       height: auto;
-      margin-left: 17%;
+      margin-left: 9%;
     }
     .toggleCollapsedSubTrue{
-      width:calc(95% - 3%);
+      width:calc(100% - 1%);
 
     }
         .toggleCollapsedSubFalse {
-          width: calc(80% - 3%);
+          width: calc(90% - 1%);
     
         }
 </style>

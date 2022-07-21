@@ -1,0 +1,58 @@
+const state = {
+
+    depoUrunListesi :null,
+    depoUrun : null,
+    depoPickFotoList : null
+    
+}
+const actions = {
+
+    depoUrunListesiYukle({commit},data){
+
+        commit('depoUrunListesiMut',data);
+    },
+    depoUrunFormYukle({commit},data){
+        console.log('Depo Action Data : ', data)
+        commit('depoUrunFormMut',data)
+    }
+}
+const mutations = {
+
+    depoUrunListesiMut(state,data){
+
+        state.depoUrunListesi = data;
+        
+    },
+    depoUrunFormMut(state,data){
+
+        state.depoUrunForm = data;
+        console.log('Depo Ürün Data Store : ', data)
+        
+       // state.depoPickFotoList = [data.fotolar.slice(0,10),[]]
+        
+    }
+}
+const getters = {
+
+    getDepoUrunListesi(state){
+
+        return state.depoUrunListesi;
+    },
+    getDepoUrunForm(state){
+
+        return state.depoUrunForm;
+    },
+    depoPickFotoList(state){
+
+        return state.depoPickFotoList
+    }
+}
+
+
+export default{
+
+    state,
+    actions,
+    mutations,
+    getters
+}
